@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "74328511373",
+    "project_id": "astrokavach-app",
+    "storage_bucket": "astrokavach-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74328511373:android:eb259f80ef9b5c79d363c4",
+        "android_client_info": {
+          "package_name": "com.astrokavach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnBPrJ3KcUEuOUcUog5_3q7AXe1w2IM2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74328511373:android:f71ad8126d4f1dd3d363c4",
+        "android_client_info": {
+          "package_name": "com.astrokavachdixi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnBPrJ3KcUEuOUcUog5_3q7AXe1w2IM2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74328511373:android:44d134d874b88104d363c4",
+        "android_client_info": {
+          "package_name": "com.example.astrokavach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnBPrJ3KcUEuOUcUog5_3q7AXe1w2IM2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

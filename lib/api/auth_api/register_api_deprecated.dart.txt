@@ -1,0 +1,58 @@
+import 'dart:convert';
+import 'package:astrokavach/custom_widgets/styles.dart';
+import 'package:astrokavach/screen/auth/login_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
+
+class RegisterApiServices {
+  Future<void> registerUser(
+      BuildContext context, String name, String email, String phone) async {
+    String apiUrl = '${CustomStyles.baseUrl}register/user';
+    try {
+      Map<String, String> headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      };
+      Map<String, dynamic> body = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+      };
+
+      final response = await http.post(Uri.parse(apiUrl),
+          body: json.encode(body), headers: headers);
+      if (response.statusCode == 200) {
+        final responseData = jsonDecode(response.body);
+        Fluttertoast.showToast(
+          msg: "Register Sucessfully",
+          textColor: Colors.white,
+          backgroundColor: Colors.green,
+        );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+        );
+      } else if (response.statusCode == 422) {
+        final responseData = jsonDecode(response.body);
+        Fluttertoast.showToast(
+          msg: responseData['message'],
+          textColor: Colors.white,
+          backgroundColor: Colors.red,
+        );
+      } else {
+        Fluttertoast.showToast(
+          msg: 'Failed to register:',
+          textColor: Colors.white,
+          backgroundColor: Colors.red,
+        );
+      }
+    } catch (e) {
+      Fluttertoast.showToast(
+        msg: 'An error occurred: $e',
+        textColor: Colors.white,
+        backgroundColor: Colors.red,
+      );
+    }
+  }
+}
